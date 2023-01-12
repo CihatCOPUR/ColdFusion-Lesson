@@ -1,0 +1,94 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    background-color: rgb(173, 249, 224);
+}
+
+/*  -------------Navbar part ----------- */
+
+.head{
+    color: darkblue;
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-shadow: 3px 3px 3px  rgb(80, 73, 73);
+    
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+}
+.navbar h1{
+    margin: 2rem;
+    color: darkblue;
+    font-size: 2.4rem;
+    cursor: pointer;
+    
+}
+.navbar h1:hover{
+    font-size: 2.45rem;
+    color: rgb(254, 254, 255);
+}
+
+/* --------------index divs  part---------------*/
+
+
+.main_div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 2px solid white;
+    height: 50vh;
+    margin-bottom: 13.5vh;
+    
+    
+}
+.first_div{
+border: 2px solid red;
+width: 45%;
+text-align: center;
+background-color: blue;
+color: white;
+font-size: 1.4rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+}
+.second_div{
+    border: 2px solid black;
+    width: 45%;
+    text-align: center;
+    background-color: white;
+    color: blue;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+
+
+  
+ 
+  
+  .footer_container{
+   width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    border: 2px solid red;
+    margin-bottom: 0%;
+    
+  }
+  .footer_container a{
+    color: black;
+    margin-left: 1rem;
+  }
+  
+ 
+  

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectDescription>
+    <name>Project</name>
+    <id>0a8c15a8-33d3-4d94-8704-db8e2a217b4e</id>
+    <comment></comment>
+    <projects></projects>
+    <buildSpec></buildSpec>
+    <natures>
+        <nature>com.adobe.ide.coldfusion.projectNature</nature>
+    </natures>
+</projectDescription>
