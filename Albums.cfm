@@ -24,14 +24,7 @@
  
 </cfdiv>
 
-<cfdiv class='main_div'>
-<cfdiv class='first_div'>
-I am a web developer and learning colfusion at Workcube Coder Certificate Training.This is the first project with coldfusion.
-</cfdiv>
-<cfdiv class='second_div'>
-I used HTML, CSS, Coldfusion, Bootstrap in this project. I presented the movies I watched , actors and albums on this site.
-</cfdiv>
-</cfdiv>
+
 
 <cfdiv class='footer_container'>
          

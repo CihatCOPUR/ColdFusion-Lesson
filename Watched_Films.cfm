@@ -19,19 +19,12 @@
     
     <h1><a href='index.cfm'  style="text-decoration: none">Home</a> </h1>
     <h1><a href='Watched_Films.cfm'  style="text-decoration: none">Watched Films</a></h1>
-    <h1><a href='Actresses.cfm'  style="text-decoration: none">Actors</a></h1>
+    <h1><a href='Actresses.cfm'  style="text-decoration: none">Actresses</a></h1>
     <h1><a href='Albums.cfm'  style="text-decoration: none">Albums</a></h1>
  
 </cfdiv>
 
-<cfdiv class='main_div'>
-<cfdiv class='first_div'>
-I am a web developer and learning colfusion at Workcube Coder Certificate Training.This is the first project with coldfusion.
-</cfdiv>
-<cfdiv class='second_div'>
-I used HTML, CSS, Coldfusion, Bootstrap in this project. I presented the movies I watched , actors and albums on this site.
-</cfdiv>
-</cfdiv>
+
 
 <cfdiv class='footer_container'>
          
