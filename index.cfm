@@ -19,7 +19,7 @@
     
     <h1><a href='index.cfm'  style="text-decoration: none">Home</a> </h1>
     <h1><a href='Watched_Films.cfm'  style="text-decoration: none">Watched Films</a></h1>
-    <h1><a href='Actresses.cfm'  style="text-decoration: none">Actors</a></h1>
+    <h1><a href='Actors.cfm'  style="text-decoration: none">Actors</a></h1>
     <h1><a href='Albums.cfm'  style="text-decoration: none">Albums</a></h1>
  
 </cfdiv>
