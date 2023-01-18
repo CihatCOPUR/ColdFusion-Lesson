@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +29,8 @@
 
 
 <cfdiv class='footer_container'>
+
+        <cfoutput>#dateFormat(now(), 'long')#</cfoutput>
          
           <p>Cihat    © 2020 All Rights Reserved.</p>
       <p><a href='https://www.linkedin.com/in/cihat-%C3%A7opur-ba13a924a/' target="_blank">

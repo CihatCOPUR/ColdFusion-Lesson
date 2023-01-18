@@ -28,6 +28,7 @@
 
 <cfdiv class='footer_container'>
          
+         <cfoutput>#dateFormat(now(), 'long')#</cfoutput>
           <p>Cihat    © 2020 All Rights Reserved.</p>
       <p><a href='https://www.linkedin.com/in/cihat-%C3%A7opur-ba13a924a/' target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">

@@ -44,7 +44,7 @@ a {
   margin-bottom: 13.5vh;
 }
 .first_div {
-  border: 9px solid rgb(255, 255, 255);
+  border: 2px solid rgb(5, 5, 5);
   width: 45%;
   text-align: center;
   background-color: blue;
@@ -55,7 +55,7 @@ a {
   align-items: center;
 }
 .second_div {
-  border: 9px solid darkblue;
+  border: 2px solid darkblue;
   width: 45%;
   text-align: center;
   background-color: white;
