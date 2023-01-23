@@ -8,8 +8,8 @@ body {
 /*  -------------Navbar part ----------- */
 
 .head {
-  color: rgb(0, 0, 14);
-  margin-top: 2rem;
+  color: darkblue;
+  margin-top: 0%;
   font-size: 2rem;
   text-shadow: 3px 3px 3px rgb(80, 73, 73);
 }
@@ -19,9 +19,9 @@ body {
   justify-content: center;
 }
 .navbar h1 {
-  margin: 2rem;
+  margin: 0.5rem;
   color: darkblue;
-  font-size: 2.4rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -30,8 +30,15 @@ a {
   color: darkblue;
 }
 .navbar h1:hover {
-  font-size: 2.45rem;
+  font-size: 2.1rem;
   color: rgb(254, 254, 255);
+}
+
+@media only screen and (max-width: 837px) {
+  .navbar {
+    display: block;
+    text-align: center;
+  }
 }
 
 /* --------------index divs  part---------------*/
@@ -40,27 +47,36 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 50vh;
-  margin-bottom: 13.5vh;
+  height: 44vh;
 }
 .first_div {
-  border: 2px solid rgb(5, 5, 5);
-  width: 45%;
+  border: 2px solid rgb(249, 247, 247);
+  box-shadow:inset 2px 2px 10px 4px 
+  #ddd;
+  border-radius: 8px;
+  width: 40%;
   text-align: center;
   background-color: blue;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
   display: flex;
   align-items: center;
 }
+
+.main_div p{
+  margin: 1.5rem;
+}
 .second_div {
   border: 2px solid darkblue;
-  width: 45%;
+  box-shadow:inset 2px 2px 10px 4px 
+  darkblue;
+  border-radius: 8px;
+  width: 40%;
   text-align: center;
   background-color: white;
   color: blue;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -75,10 +91,20 @@ a {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap-reverse;
-  border: 2px solid red;
-  margin-bottom: 0%;
+  border-top: 4px solid darkblue;
+  border-bottom: 4px solid darkblue;
+  box-shadow:inset 2px 0px 10px 0px 
+  rgb(28, 28, 229);
+  font-size: 0.7rem;
+  font-weight: 700;
+  position: fixed;
+  bottom: 0%;
 }
 .footer_container a {
   color: black;
   margin-left: 1rem;
+}
+
+.footer_container a{
+  margin-left: 2rem;
 }
