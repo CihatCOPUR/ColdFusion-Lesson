@@ -29,18 +29,25 @@
 
 
 
+
 <cfquery name = "MOVIES" datasource = "WorkCubeDB">
   SELECT
     *
-  from MOVIES 
-</cfquery><!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış--->
+  from MOVIES
+  
+</cfquery>
+
+
+<cfscript>
+cfinsert( datasource="WorkCubeDB", tablename="MOVIES", formFields="firstName" );
+</cfscript>
+<!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış--->
 
 
   <cfdump var = "#MOVIES#" >
 
-<cfoutput>
-  #MOVIES#
-</cfoutput>
+
+
 
 <cfdiv class='footer_container'>
         <marquee >
