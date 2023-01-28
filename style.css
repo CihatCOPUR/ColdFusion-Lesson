@@ -108,3 +108,12 @@ a {
 .footer_container a{
   margin-left: 2rem;
 }
+
+
+/*---------------------Card--------------------------*/
+
+.cards{
+ display:flex;
+ 
+  
+}

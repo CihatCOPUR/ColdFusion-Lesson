@@ -41,4 +41,9 @@
 --->
 
 
-cfinsert( datasource="WorkCubeDB", tablename="ACTORS", formFields="firstName,lastName,age,MOVIES,image" );
+
+<cfquery name = "add" datasource = "WorkCubeDB" >
+    INSERT INTO MOVIES
+    VALUES('fORESTGUM','Tom HANKS',1970)
+    
+</cfquery>

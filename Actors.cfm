@@ -30,21 +30,25 @@
 
 
 
-<cfquery name = "MOVIES" datasource = "WorkCubeDB">
+<cfquery name = "Actors" datasource = "WorkCubeDB">
   SELECT
     *
-  from MOVIES
+  from Actors
   
 </cfquery>
 
 
-<cfscript>
-cfinsert( datasource="WorkCubeDB", tablename="MOVIES", formFields="firstName" );
-</cfscript>
 <!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış--->
 
-
-  <cfdump var = "#MOVIES#" >
+<cfoutput query="Actors">
+     <h1>#Actors.ActorName#</h1>
+    <h1>#Actors.ActorAge#</h1>
+    <h1>#Actors.FilmName#</h1>
+    <img src="#Actors.ActorImage#" alt="A picture of a cat">
+    
+   
+</cfoutput>
+  <cfdump var = "#Actors#" >
 
 
 
