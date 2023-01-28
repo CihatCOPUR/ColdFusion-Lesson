@@ -112,8 +112,13 @@ a {
 
 /*---------------------Card--------------------------*/
 
-.cards{
+.tablo{
  display:flex;
+}
+.FilmCard{
+  width: 22%;
+}
+.filmImg{
+ float: left;
  
-  
 }

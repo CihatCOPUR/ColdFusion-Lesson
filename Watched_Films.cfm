@@ -38,9 +38,23 @@
 
 
 
-<cfdiv class>
+<div class='tablo'>
 
-<cfoutput query="Films"  class='cards'>
+ <cfoutput  query = 'Films'>
+ <cfdiv>
+    <h5 ><cfoutput>#Films.FilmName#</cfoutput></h5>
+      <h5 ><cfoutput>#Films.FilmDirector#</cfoutput></h5>
+      <p><cfoutput>#Films.FilmDesc#</cfoutput></p>
+     
+       <img src="#Films.FilmPicture#" alt="" class='filmImg' width='250px' height='300px' >
+</cfdiv>
+   </cfoutput>
+
+</div>
+
+
+<!--
+<cfoutput query="Films"  >
 
 <div class="card" style="width: 18rem;">
   
@@ -52,8 +66,8 @@
 </div>
    
 </cfoutput>
- </cfdiv>
 
+--->
 
 
 
