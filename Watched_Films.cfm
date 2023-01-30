@@ -29,9 +29,9 @@
 
 
 <cfquery name = "Films" datasource = "WorkCubeDB">
-  SELECT
-    *
-  from Films 
+  select  Films.FilmName , Films.FilmYear ,Films.FilmDirector , Films.FilmDesc, Films.FilmPicture , Actors.ActorName 
+		from Films, Actors
+		where Films.FilmName=Actors.FilmName
 
   
 </cfquery>
@@ -44,8 +44,9 @@
  <cfdiv>
     <h5 ><cfoutput>#Films.FilmName#</cfoutput></h5>
       <h5 ><cfoutput>#Films.FilmDirector#</cfoutput></h5>
+      <h5 ><cfoutput>#Films.FilmYear#</cfoutput></h5>
       <p><cfoutput>#Films.FilmDesc#</cfoutput></p>
-     
+     <h5 ><cfoutput>#Films.ActorName#</cfoutput></h5>
        <img src="#Films.FilmPicture#" alt="" class='filmImg' width='250px' height='300px' >
 </cfdiv>
    </cfoutput>

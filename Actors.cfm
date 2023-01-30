@@ -30,25 +30,25 @@
 
 
 
+
 <cfquery name = "Actors" datasource = "WorkCubeDB">
-  SELECT
-    *
-  from Actors
+  select  distinct * from Actors
+
   
 </cfquery>
 
 
 <!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış--->
 
-<cfoutput query="Actors">
-     <h1>#Actors.ActorName#</h1>
-    <h1>#Actors.ActorAge#</h1>
-    <h1>#Actors.FilmName#</h1>
-    <img src="#Actors.ActorImage#" alt="A picture of a cat">
+<cfoutput query='Actors'>
+     <h1>#ActorName#</h1>
+    <h1>#ActorAge#</h1>
+    <h1>#FilmName#</h1>
+    <img src="#ActorImage#"  alt="#ActorName#" width='250px' height='300px'>
     
    
 </cfoutput>
-  <cfdump var = "#Actors#" >
+  
 
 
 
