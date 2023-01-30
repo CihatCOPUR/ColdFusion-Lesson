@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8500/training/Project/style.css">
+         <style type='text/css'>
+
+      .filmdiv1 {
+
+            border: 1px solid #6b7272;
+            display:flex;
+            background-color: #E8E8E8;
+
+      }
+
+      </style>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>I and my first project</title>
 </head>
@@ -29,30 +40,35 @@
 
 
 <cfquery name = "Films" datasource = "WorkCubeDB">
-  select  Films.FilmName , Films.FilmYear ,Films.FilmDirector , Films.FilmDesc, Films.FilmPicture , Actors.ActorName 
-		from Films, Actors
-		where Films.FilmName=Actors.FilmName
-
-  
+  select distinct Films.FilmName , Films.FilmYear, Films.FilmDirector, Actors.ActorName , Films.FilmDesc ,Films.FilmPicture
+		from Films , Actors
+		where Films.ActorID=Actors.ActorID
 </cfquery>
 
 
 
-<div class='tablo'>
 
+<cfform >
  <cfoutput  query = 'Films'>
- <cfdiv>
-    <h5 ><cfoutput>#Films.FilmName#</cfoutput></h5>
-      <h5 ><cfoutput>#Films.FilmDirector#</cfoutput></h5>
-      <h5 ><cfoutput>#Films.FilmYear#</cfoutput></h5>
-      <p><cfoutput>#Films.FilmDesc#</cfoutput></p>
-     <h5 ><cfoutput>#Films.ActorName#</cfoutput></h5>
-       <img src="#Films.FilmPicture#" alt="" class='filmImg' width='250px' height='300px' >
-</cfdiv>
+  <div class='filmdiv1' style='display;flex , border;solid 5px red'>
+  <div class='filmdivyazi'>
+    <h5 >Name: #Films.FilmName#</h5>
+     <h5 >Director: #Films.FilmDirector#</h5>
+      <h5 >Year: #Films.FilmYear#</h5>
+     <p>  #Films.FilmDesc#</p> 
+     <h5 >Actors: #Films.ActorName#</h5>
+     </div>
+     <div class='filmdivimg'>
+       <img src="#Films.FilmPicture#" alt=""  class='filmimg' width='250px' height='300px' >
+</div>
+</div>
    </cfoutput>
 
-</div>
+</cfform>
 
+<style>
+<link href='http://127.0.0.1:8500/training/Project/style.css' rel="stylesheet" type="text/css" media="all" />
+</style>
 
 <!--
 <cfoutput query="Films"  >
