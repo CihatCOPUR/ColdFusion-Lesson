@@ -5,15 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://127.0.0.1:8500/training/Project/style.css">
+        
+        
          <style type='text/css'>
+
+        
+   
+        
 
       .filmdiv1 {
 
             border: 1px solid #6b7272;
             display:flex;
             background-color: #E8E8E8;
+            padding: 1rem;
+           
 
       }
+      .filmyazi{
+        margin-right:1rem;
+      }
+  
+    .filmimg{
+      border:5px solid black;
+      border-radius:5px;
+    }
+    .footer_container1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  border-top: 4px solid darkblue;
+  border-bottom: 4px solid darkblue;
+  box-shadow:inset 2px 0px 10px 0px 
+  rgb(28, 28, 229);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.footer_container1 a {
+  color: black;
+  margin-left: 1rem;
+}
+
+.footer_container1 a{
+  margin-left: 2rem;
+}
+
 
       </style>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -51,14 +89,14 @@
 <cfform >
  <cfoutput  query = 'Films'>
   <div class='filmdiv1' style='display;flex , border;solid 5px red'>
-  <div class='filmdivyazi'>
+  <div class=''>
     <h5 >Name: #Films.FilmName#</h5>
      <h5 >Director: #Films.FilmDirector#</h5>
       <h5 >Year: #Films.FilmYear#</h5>
-     <p>  #Films.FilmDesc#</p> 
+     <p class='filmyazi'>       #Films.FilmDesc#</p> 
      <h5 >Actors: #Films.ActorName#</h5>
      </div>
-     <div class='filmdivimg'>
+     <div class=''>
        <img src="#Films.FilmPicture#" alt=""  class='filmimg' width='250px' height='300px' >
 </div>
 </div>
@@ -89,7 +127,7 @@
 
 
 
-<cfdiv class='footer_container'>
+<cfdiv class='footer_container1'>
          <marquee >
           <p>Cihat    © 2020 All Rights Reserved.</p>
         </marquee>
