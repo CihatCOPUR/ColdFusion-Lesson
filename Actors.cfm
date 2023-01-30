@@ -9,6 +9,54 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>I and my first project</title>
+    
+ <style type='text/css'>
+    .card-img-top{
+  width: 250px;
+  height: 300px;
+}
+.Actorsdiv{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.card{
+  border:2px solid black;
+  border-radius:8px;
+  padding: 1rem;
+  text-align:center;
+  margin:1rem;
+ 
+  background-color: rgb(17, 120, 217);
+}
+
+
+.footer_container2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  border-top: 4px solid darkblue;
+  border-bottom: 4px solid darkblue;
+  box-shadow:inset 2px 0px 10px 0px 
+  rgb(28, 28, 229);
+  font-size: 0.7rem;
+  font-weight: 700;
+ 
+}
+.footer_container2 a {
+  color: black;
+  margin-left: 1rem;
+}
+
+.footer_container2 a{
+  margin-left: 2rem;
+}
+
+
+
+</style>
 </head>
 <body> 
 <center class='head'>
@@ -32,28 +80,35 @@
 
 
 <cfquery name = "Actors" datasource = "WorkCubeDB">
-  select  distinct * from Actors
+   select distinct Actors.ActorName , Actors.Actorage , Films.FilmName , Actors.ActorImage
+		from Films , Actors
+		where Actors.ActorID=Films.ActorID
 
   
 </cfquery>
 
 
 <!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış--->
+<div class='Actorsdiv'>
 
 <cfoutput query='Actors'>
-     <h1>#ActorName#</h1>
-    <h1>#ActorAge#</h1>
-    <h1>#FilmName#</h1>
-    <img src="#ActorImage#"  alt="#ActorName#" width='250px' height='300px'>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="#ActorImage#" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">#ActorName#   ,    #ActorAge#</h5>
+    <p class="card-text">#FilmName#</p>
     
+  </div>
+</div>
    
 </cfoutput>
   
+</div>
 
 
 
-
-<cfdiv class='footer_container'>
+<cfdiv class='footer_container2'>
         <marquee >
           <p>Cihat    © 2020 All Rights Reserved.</p>
         </marquee>
