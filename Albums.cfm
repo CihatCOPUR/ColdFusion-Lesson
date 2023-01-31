@@ -24,16 +24,11 @@
     <h1><a href='Books.cfm'  style="text-decoration: none">Books</a></h1>
  
 </cfdiv>
-<cfscript>
-  cfhttp(method="GET", charset="utf-8", url="http://127.0.0.1:8500/training/Project/data/data.js", result="result") {
-    cfhttpparam(name="q", type="url", value="cfml");
-}
-WriteOutput(result);
-</cfscript>
 
 
 
-<img src="https://www.pexels.com/photo/brown-rocks-during-golden-hour-2014422/" alt="Girl in a jacket" width="500" height="600">
+
+
 
 <cfdiv class='footer_container'>
          <marquee >
@@ -53,6 +48,12 @@ WriteOutput(result);
 
 
 
+
+<script>
+fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(res=>console.log(res))
+</script>
 
 
 
