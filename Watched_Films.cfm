@@ -14,21 +14,39 @@
         
 
       .filmdiv1 {
-
-            border: 1px solid #6b7272;
-            display:flex;
+         
+            border: 1px solid #6b7272;         
             background-color: #E8E8E8;
             padding: 1rem;
+            width:100%;
            
 
       }
-      .filmyazi{
-        margin-right:1rem;
+      .filmdiv2 {
+        border:2px solid black;
+        border-radius:7px;
+        display:flex;
+        height:350px;
+        padding:25px;
+        margin-top:1rem;
       }
+      .ActorNameDiv{
+  display:flex;
+}
+      .ActorNameDiv  p{
+        margin-right:10%
+      }
+      
+     .FilmDesc{
+      margin-right:10px;
+     }
   
     .filmimg{
       border:5px solid black;
       border-radius:5px;
+     width:250px;
+      height:300px;
+      
     }
     .footer_container1 {
   width: 100%;
@@ -76,55 +94,47 @@
  
 </cfdiv>
 
-
-
-<cfquery name = "Films" datasource = "WorkCubeDB">
-  select distinct Films.FilmName , Films.FilmYear, Films.FilmDirector, Actors.ActorName , Films.FilmDesc ,Films.FilmPicture
-		from Films , Actors
-		where Films.ActorID=Actors.ActorID
+<cfquery name = "FILMS" datasource = "WorkCubeDB">
+  SELECT
+    *
+  FROM
+    FILMS
 </cfquery>
 
+<div class='filmdiv1'>
 
+<cfoutput query='FILMS'>
 
-
-<cfform >
- <cfoutput  query = 'Films'>
-  <div class='filmdiv1' style='display;flex , border;solid 5px red'>
-  <div class=''>
-    <h5 >Name: #Films.FilmName#</h5>
-     <h5 >Director: #Films.FilmDirector#</h5>
-      <h5 >Year: #Films.FilmYear#</h5>
-     <p class='filmyazi'>       #Films.FilmDesc#</p> 
-     <h5 >Actors: #Films.ActorName#</h5>
-     </div>
-     <div class=''>
-       <img src="#Films.FilmPicture#" alt=""  class='filmimg' width='250px' height='300px' >
-</div>
-</div>
-   </cfoutput>
-
-</cfform>
-
-<style>
-<link href='http://127.0.0.1:8500/training/Project/style.css' rel="stylesheet" type="text/css" media="all" />
-</style>
-
-<!--
-<cfoutput query="Films"  >
-
-<div class="card" style="width: 18rem;">
+<div class='filmdiv2'>
   
-  <div class="card-body">
-    <h5 class="card-title">#Films.FilmName#</h5>
-      <h5 class="card-title">#Films.FilmDirector#</h5>
-      <p>#Films.FilmDesc#</p>
+  <div>
+    <h5 class="">#FILM_NAME#   ,    #FILM_YEAR#</h5>
+
+<cfquery name = "ACTORS" datasource = "WorkCubeDB">
+  SELECT ACTOR_NAME FROM ACTORS ,FILMS_ACTORS_REL , FILMS
+WHERE ACTORS.ACTOR_ID=FILMS_ACTORS_REL.ACTOR_ID AND FILMS.FILM_ID=#FILMS.FILM_ID#   AND FILMS_ACTORS_REL.FILM_ID=#FILMS.FILM_ID#
+     
+</cfquery>
+<p>Oyuncular:</p>
+<div class='ActorNameDiv'>
+<cfloop query = "#ACTORS#" >
+  
+
+  <p>#ACTORS.ACTOR_NAME#</p>
+   </cfloop> 
+  </div>  
+ 
+  <p class="FilmDesc">   Konu; #FILM_DESC#</p>
   </div>
+  <div>
+    <img class="filmimg" src="#FILM_IMG#" alt="Card image cap">
+ 
 </div>
-   
+
+ </div >
 </cfoutput>
-
---->
-
+  
+</div>
 
 
 

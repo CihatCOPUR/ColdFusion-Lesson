@@ -75,21 +75,56 @@
  
 </cfdiv>
 
-
-
-
-
-
-<cfquery name = "Actors" datasource = "WorkCubeDB">
-   select distinct Actors.ActorName , Actors.Actorage , Films.FilmName , Actors.ActorImage
-		from Films , Actors
-		where Actors.ActorID=Films.ActorID
-
-  
+<cfquery name = "ACTORS" datasource = "WorkCubeDB">
+  SELECT
+    *
+  FROM
+    ACTORS
 </cfquery>
 
+<div class='Actorsdiv'>
 
-<!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış--->
+<cfoutput query='ACTORS'>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="#ACTOR_IMG#" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">#ACTOR_NAME#   ,    #ACTOR_AGE#</h5>
+
+<cfquery name = "FILMS" datasource = "WorkCubeDB">
+  SELECT FILM_NAME FROM FILMS ,FILMS_ACTORS_REL , ACTORS
+WHERE FILMS.FILM_ID=FILMS_ACTORS_REL.FILM_ID AND ACTORS.ACTOR_ID=#ACTORS.ACTOR_ID#   AND FILMS_ACTORS_REL.ACTOR_ID=#ACTORS.ACTOR_ID#
+     
+</cfquery>
+
+<cfloop query = "#FILMS#" >
+  <p>#FILMS.FILM_NAME#</p>
+</cfloop>
+    
+    
+  </div>
+</div>
+   
+</cfoutput>
+  
+</div>
+
+
+
+
+<!---
+<cfquery name = "GET_ACTORS_AND_MOVIES" datasource = "WorkCubeDB">
+	SELECT
+		*
+	FROM
+		FILMS_ACTORS_REL FAL
+		LEFT JOIN Actors A ON A.ActorID = FAL.ACTOR_ID
+		LEFT JOIN Films F ON F.FilmID = FAL.FILM_ID
+</cfquery>
+--->
+
+
+<!--- bu senin select sorgun burada doğru yazılmış datasource belirtilmiş ve tablo yazılmış
 <div class='Actorsdiv'>
 
 <cfoutput query='Actors'>
@@ -107,7 +142,7 @@
   
 </div>
 
-
+--->
 
 <cfdiv class='footer_container2'>
         <marquee >

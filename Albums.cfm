@@ -25,9 +25,23 @@
  
 </cfdiv>
 
+<cfquery name = "ALBUMS" datasource = "WorkCubeDB">
+  SELECT IMG 
+  FROM ALBUMS  
+  FOR JSON PATH
+</cfquery>
 
 
 
+
+<cfoutput query='jsonData'>
+
+<cfset jsonData = serializeJSON(#ALBUMS#)>
+<img class="card-img-top" src="#jsonData#" alt="Card image cap">
+</cfoutput>
+
+
+  
 
 
 <cfdiv class='footer_container'>
@@ -45,18 +59,6 @@
 </svg></a>
 </p>
 </cfdiv>
-
-
-
-
-<script>
-fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(res=>console.log(res))
-</script>
-
-
-
 
 
 </body>
